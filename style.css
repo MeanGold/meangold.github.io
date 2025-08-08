@@ -2,42 +2,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-  }
-  
-  header {
-    background: #333;
+}
+
+header {
+    background: rgba(30, 30, 30, 0.8);
+    position: fixed;
+    top: 0; 
+    height: 110px;
     color: #fff;
     padding: 1em;
     text-align: center;
-  }
-  
-  nav a {
+    width: 100%;
+}
+
+nav a {
     color: #fff;
     margin: 0 1em;
     text-decoration: none;
-  }
-  
-  section {
+}
+
+section#about {
+    margin-top: 110px;
+}
+
+div.project {
+    border: groove 2px #111;
+    box-shadow: 5px 5px 5px #555;
+    height: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px 10px 20px 10px;
+    width: 50%;
+    transition: background-color 0.2s; 
+}
+div.project:hover {
+    background-color: #f56600; 
+    transition: background-color 0.6s; 
+}
+
+div.project h3 {
+    text-align: center;
+}
+div.card_image {
+    display: inline-block;
+    width: auto; 
+}
+div.card_image img {
+    width: 50%; 
+}
+div.card_text {
+    display: inline-block;
+}
+div.project p {
+    text-align: left;
+}
+
+section {
     padding: 2em;
     max-width: 800px;
     margin: auto;
-  }
-  
-  #projects .project {
-    margin: 1em 0;
-  }
-  
-  footer {
+}
+
+footer {
     text-align: center;
     padding: 1em;
     background: #333;
     color: #fff;
     margin-top: 2em;
-  }
-  
+}
