@@ -31,6 +31,17 @@ section#about {
     margin-top: 110px;
 }
 
+section#about p {
+    margin-left: 1em;
+}
+section#about table {
+    margin-left: 1em;
+}
+
+td.row-header {
+    font-weight: bold;
+}
+
 div.project {
     border: groove 2px #111;
     box-shadow: 5px 5px 5px #555;
