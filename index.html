@@ -20,31 +20,31 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Hey! My name is Jonathan Maenche, and I am a senior at Clemson University pursuing a B.S. in Computer Science 
-            with minors in Business Administration and Artificial Intelligence. I will be graduating in May 2026, and I am interested
-            in pursuing a career as a data engineer, data analyst, or data scientists. I am interested in how data can be used
-            to inform business decisions. 
-            A few careers that I am interested in... data engineer, data analyst, market researcher, AI/ML engineer
-            </p>
-        <table>
-            <tbody>
-                <tr>
-                    <td class="row-header", style="width: 150px;">Degree:</td>
-                    <td>B.S. in Computer Science (graduating May 2026)</td>
-                </tr>
-                <tr>
-                    <td class="row-header">Minors:</td>
-                    <td>Business Administration & Artificial Intelligence</td>
-                </tr>
-                <tr>
-                    <td class="row-header">Career interests:</td>
-                    <td>data engineer, data analyst, market researcher, AI/ML engineer</td>
-                </tr>
-            </tbody>
-            <tr>
-                
-            </tr>
-        </table>
+        <p>Hey! My name is Jonathan Maenche, and I am interested in how data can be used to inform business decisions. [Add personal statement]</p>
+        <div class="flex-container">
+            <div class="table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="row-header", style="width: 150px;">Degree:</td>
+                            <td>B.S. in Computer Science (graduating May 2026)</td>
+                        </tr>
+                        <tr>
+                            <td class="row-header">Minors:</td>
+                            <td>Business Administration & Artificial Intelligence</td>
+                        </tr>
+                        <tr>
+                            <td class="row-header">Career interests:</td>
+                            <td>Data engineer, Data analyst, Market researcher, AI/ML engineer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="profile-image">
+                <img src="images/profile_picture.jpg"/>
+            </div>
+        </div>
+        
         <h3>Work experience</h3>
         <p>Data engineering intern @ Milliken & Company</p>
         <p>Research intern @ NIWC Atlantic</p>
@@ -53,19 +53,82 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project card" id="project1">
-            <h3>Project 1</h3>
-            <div class="card_content">
-                <div class="card_image">
-                    <img src="images/connect4.png" \>
+            <div class="flex-container">
+                <div class="project-image">
+                    <img src="images/connect4.png"/>
                 </div>
-                <div class="card_text">
-                    <p>A brief description of your project.</p>
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="name" colspan="2">ConnectX Command Line Game</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Company:</strong> School project</td>
+                                <td class="date"><strong>Date:</strong> Fall 2023</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Description:</strong> Constructed a scalable Connect4 game with 2 different backend implementations; software design principles included creating requirements analysis, UML diagrams, public and private classes, and an interface to allow for two implementations of data storage (key-value pairs; array-based)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Link:</strong> default link</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="project" id="project2">
-            <h3>Project 2</h3>
-            <p>Another project description.</p>
+        <div class="project card" id="project2">
+            <div class="flex-container">
+                <div class="project-image">
+                    <img src="images/E2E_flow.png"/>
+                </div>
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="name" colspan="2">Data engineering with Microsoft Fabric</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Company:</strong> Milliken & Company</td>
+                                <td class="date"><strong>Date:</strong> Summer 2025</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Description:</strong> Creating a pipeline to automate maintenance that optimizes read-access times for data tables and removes old history files for cleaner storage; fixing the data ingestion process for two Power BI reports that were broken due to changing company infrastructure, utilized MS Fabric APIs to retrieve required data and store it in delta tables within a Fabric lakehouse; designing an end-to-end pipeline to ingest, clean, and transform sales and delivery data and present on it with a sample sales order dashboard in Power BI</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Link:</strong> default link</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="project card" id="project3">
+            <div class="flex-container">
+                <div class="project-image">
+                    <img src="images/SEAVUE_example.gif"/>
+                </div>
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="name" colspan="2">Counting fish using Computer Vision</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Company:</strong> NIWC Atlantic</td>
+                                <td class="date"><strong>Date:</strong> Summer 2024</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Description:</strong> Engineered a computer vision system to automate the detection, classification, and counting of fish in underwater video footage, supporting marine research at the South Carolina Department of Natural Resources</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Link:</strong> default link</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
