@@ -1,121 +1,469 @@
+/* ==========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ========================================== */
+:root {
+    /* Clemson orange - primary accent color */
+    --primary-color: #F56600;
+    --primary-hover: #d45700;
+    
+    /* Text colors */
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    
+    /* Background colors */
+    --bg-light: #f9fafb;
+    
+    /* Border and shadow styles */
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   GLOBAL RESET AND BASE STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling when clicking nav links */
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-dark);
+    background-color: #ffffff;
 }
 
+/* ==========================================
+   HEADER AND NAVIGATION
+   ========================================== */
 header {
-    background: rgba(30, 30, 30, 0.8);
-    position: fixed;
-    top: 0; 
-    height: 110px;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect for elements behind header */
+    position: fixed; /* Stay at top when scrolling */
+    top: 0;
     width: 100%;
+    z-index: 1000; /* Ensure header appears above other content */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Space between name and nav */
+    align-items: center; /* Vertically center items */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Navigation menu */
+nav {
+    display: flex;
+    gap: 2rem; /* Space between nav links */
 }
 
 nav a {
-    color: #fff;
-    margin: 0 1em;
+    color: var(--text-gray);
     text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+    position: relative; /* Required for ::after pseudo-element positioning */
 }
 
+nav a:hover {
+    color: var(--primary-color); /* Clemson orange on hover */
+}
+
+/* Animated underline effect on nav links */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color); /* Clemson orange underline */
+    transition: width 0.3s ease; /* Animate the underline width */
+}
+
+nav a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+
+/* ==========================================
+   SECTION LAYOUTS
+   ========================================== */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Center sections */
+}
+
+/* Add top margin to first section to account for fixed header */
 section#about {
-    margin-top: 110px;
+    margin-top: 80px;
 }
 
-section#about p {
-    margin-left: 1em;
-}
-section#about table {
-    margin-left: 1em;
+/* Section headings */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
-section#about img {
-    width: 200px;
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem;
+    color: var(--text-dark);
+}
+
+/* ==========================================
+   ABOUT SECTION
+   ========================================== */
+/* Flexbox container for intro text and profile image */
+.intro-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.intro-text {
+    flex: 1; /* Take up available space */
+}
+
+.intro-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.profile-image {
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.profile-image img {
+    width: 220px;
     height: auto;
-    border: 3px solid black; /* Small black border */
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Slight box shadow */
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid var(--border-color);
 }
 
-td.row-header {
-    font-weight: bold;
+/* ==========================================
+   CONTACT LINKS
+   ========================================== */
+.contact-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary-color); /* Clemson orange background */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-links a:hover {
+    background: var(--primary-hover); /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   INFO TABLE CARD
+   ========================================== */
+.info-card {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.info-table {
+    width: 100%;
+}
+
+.info-table td {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Remove border from last row */
+.info-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Left column headers */
+.info-table .row-header {
+    font-weight: 600;
+    color: var(--text-dark);
+    width: 180px;
     vertical-align: top;
 }
 
-.flex-container {
-  display: flex; /* Makes the container a flex container */
-  /* Optional: Adjust alignment and spacing */
-  justify-content: space-around; /* Distributes space around items */
-  align-items: center; /* Vertically centers items */
+.info-table td:last-child {
+    color: var(--text-gray);
 }
 
-div.table {
-    /* Optional: Set specific widths or let flex distribute them */
-    flex: 1; /* Allows items to grow and shrink proportionally */
-    /* padding: 20px; */
-    /* border: 1px solid black;  */
+/* ==========================================
+   WORK EXPERIENCE
+   ========================================== */
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--primary-color); /* Clemson orange left border */
 }
 
-div.project {
-    border: groove 2px #111;
-    box-shadow: 5px 5px 5px #555;
-    height: auto;
-    margin: auto auto 20px 1em;
-    /* margin-bottom: 20px; */
-    padding: 10px 10px 10px 10px;
+.experience-item p {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.experience-item p:first-child {
+    margin-bottom: 0.25rem;
+}
+
+.experience-item p:last-child {
+    color: var(--text-gray);
+    font-weight: 400;
+}
+
+/* ==========================================
+   PROJECTS SECTION
+   ========================================== */
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Individual project card */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Hover effect on project cards */
+.project-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px); /* Lift effect */
+    border-color: var(--primary-color); /* Clemson orange border on hover */
+}
+
+/* Flexbox layout for project content */
+.project-content {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.project-image {
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.project-image img {
     width: 100%;
-    transition: background-color 0.2s; 
-}
-
-div.project:hover {
-    background-color: #f56600; 
-    transition: background-color 0.6s; 
-}
-
-div.project div.project-image {
-    width: 30%;
-}
-
-div.project div.table {
-    margin-left: 1em;
-}
-
-div.project-image img {
-    width: 100%;
     height: auto;
-    border: 5px outset black; /* Small black border */
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Slight box shadow */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-td.name {
-    font-weight: bold;
-    text-align: center;
+.project-details {
+    flex: 1;
 }
 
-td.date {
-    width: fit-content;
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
 }
 
-section {
-    padding: 2em;
-    max-width: 800px;
-    margin: auto;
+/* Project metadata (company and date) */
+.project-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-gray);
 }
 
+.project-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.project-meta strong {
+    color: var(--text-dark);
+    margin-right: 0.5rem;
+}
+
+.project-description {
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* GitHub/external links */
+.project-link {
+    display: inline-block;
+    color: var(--primary-color); /* Clemson orange links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* ==========================================
+   TECHNOLOGY TAGS
+   ========================================== */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap; /* Wrap tags to new line if needed */
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    padding: 0.4rem 0.8rem;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 20px; /* Pill-shaped tags */
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* ==========================================
+   RESUME SECTION
+   ========================================== */
+.resume-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color); /* Clemson orange background */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.resume-download:hover {
+    background: var(--primary-hover); /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
     text-align: center;
-    padding: 1em;
-    background: #333;
-    color: #fff;
-    margin-top: 2em;
+    padding: 2rem;
+    background: var(--text-dark);
+    color: white;
+    margin-top: 4rem;
+}
+
+footer p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - MOBILE
+   ========================================== */
+@media (max-width: 768px) {
+    /* Stack header elements vertically on mobile */
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    /* Stack intro text and image vertically (image first) */
+    .intro-container {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .profile-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Stack project content vertically on mobile */
+    .project-content {
+        flex-direction: column;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+
+    /* Stack contact buttons vertically on mobile */
+    .contact-links {
+        flex-direction: column;
+    }
+
+    /* Stack project metadata vertically on mobile */
+    .project-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }

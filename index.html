@@ -2,146 +2,207 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    
+    <!-- Page title shown in browser tab -->
+    <title>Jonathan Maenche - Portfolio</title>
+    
+    <!-- Google Fonts - Inter font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Fixed header with navigation -->
     <header>
-        <h1>Jonathan Maenche</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#resume">Resume</a>
-        </nav>
+        <div class="container">
+            <!-- Main heading with name -->
+            <h1>Jonathan Maenche</h1>
+            
+            <!-- Navigation menu with anchor links to sections -->
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+            </nav>
+        </div>
     </header>
 
+    <!-- About Me section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hey! My name is Jonathan Maenche, and I am interested in how data can be used to inform business decisions. [Add personal statement]</p>
-        <div class="flex-container">
-            <div class="table">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td class="row-header", style="width: 150px;">Degree:</td>
-                            <td>B.S. in Computer Science (graduating May 2026)</td>
-                        </tr>
-                        <tr>
-                            <td class="row-header">Minors:</td>
-                            <td>Business Administration & Artificial Intelligence</td>
-                        </tr>
-                        <tr>
-                            <td class="row-header">Career interests:</td>
-                            <td>Data engineer, Data analyst, Market researcher, AI/ML engineer</td>
-                        </tr>
-                    </tbody>
-                </table>
+        
+        <!-- Container for intro text and profile image -->
+        <div class="intro-container">
+            <!-- Left side: biographical text and contact buttons -->
+            <div class="intro-text">
+                <p>Hi! I'm Jonathan, an emerging data engineer finishing my degree in Computer Science at Clemson University. I specialize in building ETL pipelines with SQL and Python, improving data quality, and managing relational databases and enterprise data systems.</p>
+                
+                <p>I complement my technical background with minors in Business Administration and Artificial Intelligence, giving me experience problem solving in real-world business contexts and applying machine learning techniques such as logistic regression, convolutional neural networks, and feature extraction. No matter what team environment, I contribute a hunger to learn, dependability, and clear communication to build robust solutions.</p>
+                
+                <!-- Contact links (update these with your actual URLs) -->
+                <div class="contact-links">
+                    <a href="https://github.com/MeanGold" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/jmaenche" target="_blank">LinkedIn</a>
+                    <a href="mailto:jm.maenche@gmail.com">Email Me</a>
+                </div>
             </div>
+            
+            <!-- Right side: profile photo -->
             <div class="profile-image">
-                <img src="images/profile_picture.jpg"/>
+                <img src="images/jonathan_maenche_bio.png" alt="Jonathan Maenche"/>
             </div>
         </div>
+
+        <!-- Information card with educational details -->
+        <div class="info-card">
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td class="row-header">Degree:</td>
+                        <td>B.S. in Computer Science (graduating May 2026)</td>
+                    </tr>
+                    <tr>
+                        <td class="row-header">Minors:</td>
+                        <td>Business Administration & Artificial Intelligence</td>
+                    </tr>
+                    <tr>
+                        <td class="row-header">Career Interests:</td>
+                        <td>Data Engineer, Data Analyst, Market Researcher, AI/ML Engineer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Work experience subsection -->
+        <h3>Work Experience</h3>
         
-        <h3>Work experience</h3>
-        <p>Data engineering intern @ Milliken & Company</p>
-        <p>Research intern @ NIWC Atlantic</p>
+        <!-- Individual experience items with colored left border -->
+        <div class="experience-item">
+            <p>Data Engineering Intern</p>
+            <p>Milliken & Company</p>
+        </div>
+        <div class="experience-item">
+            <p>Research Intern</p>
+            <p>NIWC Atlantic</p>
+        </div>
     </section>
 
+    <!-- Projects section -->
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project card" id="project1">
-            <div class="flex-container">
-                <div class="project-image">
-                    <img src="images/connect4.png"/>
-                </div>
-                <div class="table">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="name" colspan="2">ConnectX Command Line Game</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Company:</strong> School project</td>
-                                <td class="date"><strong>Date:</strong> Fall 2023</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Description:</strong> Constructed a scalable Connect4 game with 2 different backend implementations; software design principles included creating requirements analysis, UML diagrams, public and private classes, and an interface to allow for two implementations of data storage (key-value pairs; array-based)</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Link:</strong> default link</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="project card" id="project2">
-            <div class="flex-container">
-                <div class="project-image">
-                    <img src="images/E2E_flow.png"/>
-                </div>
-                <div class="table">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="name" colspan="2">Data engineering with Microsoft Fabric</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Company:</strong> Milliken & Company</td>
-                                <td class="date"><strong>Date:</strong> Summer 2025</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Description:</strong> Creating a pipeline to automate maintenance that optimizes read-access times for data tables and removes old history files for cleaner storage; fixing the data ingestion process for two Power BI reports that were broken due to changing company infrastructure, utilized MS Fabric APIs to retrieve required data and store it in delta tables within a Fabric lakehouse; designing an end-to-end pipeline to ingest, clean, and transform sales and delivery data and present on it with a sample sales order dashboard in Power BI</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Link:</strong> default link</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        
+        <!-- Grid container for project cards -->
+        <div class="projects-grid">
+            
+            <!-- Project 1: Microsoft Fabric -->
+            <div class="project-card">
+                <div class="project-content">
+                    <!-- Project image -->
+                    <div class="project-image">
+                        <img src="images/E2E_flow.png" alt="Data Engineering Pipeline"/>
+                    </div>
+                    
+                    <!-- Project details -->
+                    <div class="project-details">
+                        <h3 class="project-title">Data Engineering with Microsoft Fabric</h3>
+                        
+                        <!-- Metadata: company and date -->
+                        <div class="project-meta">
+                            <span><strong>Company:</strong> Milliken & Company</span>
+                            <span><strong>Date:</strong> Summer 2025</span>
+                        </div>
+                        
+                        <!-- Project description -->
+                        <p class="project-description">
+                            Created a pipeline to automate maintenance that optimizes read-access times for data tables and removes old history files for cleaner storage. Fixed the data ingestion process for two Power BI reports that were broken due to changing company infrastructure, utilizing MS Fabric APIs to retrieve required data and store it in delta tables within a Fabric lakehouse. Designed an end-to-end pipeline to ingest, clean, and transform sales and delivery data and present it with a sample sales order dashboard in Power BI.
+                        </p>
+                        
+                        <!-- Technology tags -->
+                        <div class="tech-tags">
+                            <span class="tag">Microsoft Fabric</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">Delta Lake</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="project card" id="project3">
-            <div class="flex-container">
-                <div class="project-image">
-                    <img src="images/SEAVUE_example.gif"/>
+
+            <!-- Project 2: Computer Vision -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="images/SEAVUE_example.gif" alt="Computer Vision Fish Detection"/>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Counting Fish Using Computer Vision</h3>
+                        <div class="project-meta">
+                            <span><strong>Company:</strong> NIWC Atlantic</span>
+                            <span><strong>Date:</strong> Summer 2024</span>
+                        </div>
+                        <p class="project-description">
+                            Engineered a computer vision system to automate the detection, classification, and counting of fish in underwater video footage, supporting marine research at the South Carolina Department of Natural Resources.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">OpenCV</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="table">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="name" colspan="2">Counting fish using Computer Vision</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Company:</strong> NIWC Atlantic</td>
-                                <td class="date"><strong>Date:</strong> Summer 2024</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Description:</strong> Engineered a computer vision system to automate the detection, classification, and counting of fish in underwater video footage, supporting marine research at the South Carolina Department of Natural Resources</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Link:</strong> default link</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            </div>
+
+            <!-- Project 3: Connect4 Game -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="images/connect4.png" alt="Connect4 Game"/>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">ConnectX Command Line Game</h3>
+                        <div class="project-meta">
+                            <span><strong>Type:</strong> School Project</span>
+                            <span><strong>Date:</strong> Fall 2023</span>
+                        </div>
+                        <p class="project-description">
+                            Constructed a scalable Connect4 game with 2 different backend implementations. Software design principles included creating requirements analysis, UML diagrams, public and private classes, and an interface to allow for two implementations of data storage (key-value pairs; array-based).
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">Software Design</span>
+                            <span class="tag">Data Structures</span>
+                        </div>
+                        <!-- External link to GitHub repo -->
+                        <a href="https://github.com/MeanGold/CPSC2150-Project" target="_blank" class="project-link">View on GitHub →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Resume section with download link -->
     <section id="resume">
         <h2>Resume</h2>
-        <p><a href="path/to/your-resume.pdf" download>Download my resume</a></p>
+        <!-- Update the path to your actual resume PDF -->
+        <a href="path/to/your-resume.pdf" class="resume-download" download>
+            📄 Download My Resume
+        </a>
     </section>
 
+    <!-- Footer with copyright information -->
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2025 Jonathan Maenche. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
